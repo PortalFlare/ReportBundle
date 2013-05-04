@@ -1,0 +1,25 @@
+{
+	"name":  "portalflare/report-bundle",
+	"type": "symfony-bundle",
+	"description": "Reporting functions",
+	"keywords": ["report", "bundle"],
+	"homepage": "http://github.com/PortalFlare/ReportBundle",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "David Sands",
+			"email": "dsands@portalflare.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.2"
+	},
+	"require-dev": {
+		"symfony/framework-bundle": ">=2.2"
+	},
+	"autoload": {
+		"psr-0": { "PortalFlare\\ReportBundle": "" }
+	},
+	"minimum-stability": "dev",
+	"target-dir": "PortalFlare/ReportBundle"
+}
