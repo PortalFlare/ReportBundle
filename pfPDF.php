@@ -1,6 +1,6 @@
 <?php
 
-namespace PortalFlare\Bundle\ReportBundle;
+namespace PortalFlare\ReportBundle;
 
 class pfPDF extends \TCPDF {
   protected $headertext1;
