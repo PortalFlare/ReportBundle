@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PortalFlare Maintence Management System</title>
+  <link href="{{ asset('bundles/portalflare/mms/css/main.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ asset('bundles/portalflaremms/css/ui-lightness/jquery-ui-1.10.0.custom.min.css') }}"
+        rel="stylesheet"
+  <link href="{{ asset('bundles/portalflaremms/css/jquery-ui-timepicker-addon.css') }}" rel="stylesheet"
+        type="text/css">
+  <script type="text/javascript" src="{{ asset('bundles/portalflaremms/js/jquery-1.9.1.min.js') }}"></script>
+  <script type="text/javascript"
+          src="{{ asset('bundles/portalflaremms/js/jquery-ui-1.10.0.custom.min.js') }}"></script>
+  <script type="text/javascript"
+          src="{{ asset('bundles/portalflaremms/js/jquery-ui-timepicker-addon.js') }}"></script>
+  <script>
+    $(document).ready(function () {
+      $('form:first *:input[type!=hidden]:first').focus();
+    });
+  </script>
+
+  {% block javascript %}
+  {% endblock %}
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <div id="headertext">
+      {{ report }}
+    </div>
+  </div>
+  {% include "::flashmsg.html.twig" %}
+  {% block content %}
+  {% endblock %}
+</div>
+<div id="footer">
+  <p>&copy; {{ "now"|date("Y") }} Portal Flare &middot; All rights reserved.</p>
+
+  <p>Version 1.0 {{ revision }}</p>
+</div>
+</body>
+</html>
