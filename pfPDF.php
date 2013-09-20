@@ -11,6 +11,12 @@ class pfPDF extends \TCPDF {
   protected $columnheaderfillcolor = array('r' => 192, 'g' => 192, 'b' => 192);
   protected $columnheaderbordercolor = array('r' => 0, 'g' => 0, 'b' => 0);
   protected $ewhere;
+  protected $logofile;
+
+
+  public function setLogoFile($file) {
+    $this->logofile = $file;
+  }
 
   public function setColumnRows($rows) {
     $this->columnrows = $rows;
@@ -75,8 +81,12 @@ class pfPDF extends \TCPDF {
       }
       $this->Ln();
       $this->SetTopMargin($this->GetY());
-      $image_file = $_SERVER['DOCUMENT_ROOT'] . '/bundles/portalflaremms/images/logo.jpg';
-      $this->Image($image_file, 18, 18, 108, 0, 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+      if ($this->logofile) {
+        $image_file = $_SERVER['DOCUMENT_ROOT'] . $this->logofile;
+        $this->Image($image_file, 18, 18, 108, 0, 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+      }
+
     }
   }
 
