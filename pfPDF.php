@@ -84,7 +84,7 @@ class pfPDF extends \TCPDF {
 
       if ($this->logofile) {
         $image_file = $_SERVER['DOCUMENT_ROOT'] . $this->logofile;
-        $this->Image($image_file, 18, 18, 108, 0, 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        $this->Image($image_file, 18, 18, 108, 0, '', '', 'T', false, 300, '', false, false, 0, false, false, false);
       }
 
     }
