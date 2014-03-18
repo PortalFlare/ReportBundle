@@ -99,7 +99,12 @@ class pfPDF extends \TCPDF {
       // DateTime
       $this->Cell(144, 0, date('D M j, Y g:i a T'), 0, false, 'L', 0, '', 0, false, 'T', 'M');
       // Page number
-      $this->Cell(0, 0, 'Page ' . $this->getAliasNumPage() . '/' . $this->getAliasNbPages(), 0, false, 'R', 0, '', 0, false, 'T', 'M');
+      if (empty($this->pagegroups)) {
+        $pagenumtxt = $this->l['w_page'].' '.$this->getAliasNumPage().' / '.$this->getAliasNbPages();
+      } else {
+        $pagenumtxt = $this->l['w_page'].' '.$this->getPageNumGroupAlias().' / '.$this->getPageGroupAlias();
+      }
+      $this->Cell(0, 0, 'Page ' . $pagenumtxt, 0, false, 'R', 0, '', 0, false, 'T', 'M');
     }
   }
 
