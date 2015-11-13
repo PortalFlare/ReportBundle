@@ -5,6 +5,7 @@ namespace PortalFlare\ReportBundle;
 class pfPDF extends \TCPDF {
   protected $headertext1;
   protected $headertext2;
+  protected $headertext3;
   protected $headeralign = 'C'; // L, C, R
   protected $columns = array();
   protected $columnheadertextcolor = array('r' => 0, 'g' => 0, 'b' => 0);
@@ -50,6 +51,10 @@ class pfPDF extends \TCPDF {
     $this->headertext2 = $headertext2;
   }
 
+  public function setHeaderText3($headertext3) {
+    $this->headertext3 = $headertext3;
+  }
+
   //Page header
   public function Header() {
     if ($this->print_header) {
@@ -59,6 +64,8 @@ class pfPDF extends \TCPDF {
       $this->Ln();
       $this->SetFont('helvetica', '', 12);
       $this->Cell(0, 0, $this->headertext2, 0, false, $this->headeralign, 0, '', 0, false, 'M', 'M');
+      $this->Ln();
+      $this->Cell(0, 0, $this->headertext3, 0, false, $this->headeralign, 0, '', 0, false, 'M', 'M');
       $this->Ln(12);
       $this->SetFont('dejavusans', '', 8, '', true);
       $this->MultiCell(0, 0, $this->ewhere, 0, 'C', false, 0, '', '', true, 0, false, true, 0, 'T', false);
