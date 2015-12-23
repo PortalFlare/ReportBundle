@@ -56,8 +56,8 @@ class pfPDF extends \TCPDF {
     $this->headertext3 = $headertext3;
   }
 
-  public function setHeaderText4($headertext3) {
-    $this->headertext3 = $headertext3;
+  public function setHeaderText4($headertext4) {
+    $this->headertext4 = $headertext4;
   }
 
   //Page header
