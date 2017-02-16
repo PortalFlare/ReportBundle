@@ -93,8 +93,8 @@ class pfPDF extends \TCPDF {
           $this->MultiCell($column['width'], $rowheight, $column['label'], 1, $column['align'], true, 0, '', '', true, 0, false, true, $rowheight, 'B', false);
         }
       }
-      //$this->Ln();
-      //$this->SetTopMargin($this->GetY());
+      $this->Ln();
+      $this->SetTopMargin($this->GetY());
 
       if ($this->logofile) {
         $image_file = $_SERVER['DOCUMENT_ROOT'] . $this->logofile;
