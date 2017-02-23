@@ -2,6 +2,8 @@
 
 namespace PortalFlare\ReportBundle;
 
+use TCPDF;
+
 class pfPDF extends \TCPDF {
   protected $headertext1;
   protected $headertext2;
